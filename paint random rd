@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>mrBin</title>
+<style>
+body {
+background-color : #5F9EA0;
+}
+div {
+border: 1px solid #333;
+box-shadow: 8px 5px 8px;
+heigth : 30px;
+width  : 50px;
+backgroung-color : #F7F8A0;
+}
+.color1 {
+background-color : #DC143C;
+}
+
+.hh {
+font-weigth : bold;
+font-size : 24 px;
+}
+
+.color2 {
+background-color : #2F4F4F;
+}
+.hidden {
+display : none;
+}
+
+table {
+border-collapse: collapse;
+border : 1 px solid grey;
+}
+
+td {
+padding: 10px 20px;
+border : 1px solid grey;
+background-color : #F0F8FF;
+}
+
+.div1 {
+heigth : 30px;
+width  : 50px;
+background-color : #F0F8FF;
+position : absolute;
+}
+.div2 {
+heigth : 20px;
+width  : 40px;
+background-color : #33FF74;
+position : absolute;
+}
+.div3 {
+heigth : 10px;
+width  : 30px;
+background-color : #5757B4;
+position : absolute;
+}
+.div4 {
+heigth : 40px;
+width  : 60px;
+background-color : #E9F089;
+position : absolute;
+}
+.closeDiv {
+margin-left: 15px;
+color: white;
+font-waight: bold;
+cursor: pointer;
+transition: 0.3s;
+}
+
+</style>
+
+</head>
+
+<body>
+<table>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</table>
+<button>click this</button>
+
+<script>
+let td = document.querySelectorAll('td');
+let btn = document.querySelector('button');
+
+let ind = 0;
+let random = Math.floor(Math.random()*td.length);
+let arr = []; for (i = 0; i < td.length; i++) arr.push(i);
+let result = [];
+
+for (let i = 0; i < td.length;i++) {
+    result.push(arr.splice(Math.floor(Math.random()*arr.length),1)[0]);
+}
+
+btn.addEventListener('click',(e)=> {
+td[result[ind]].style.background = '#BDB76B';
+    ind++;
+    if(ind >= result.length) {
+        i = 0;
+    }});
+
+
+</script>
+</body>
+</html>
